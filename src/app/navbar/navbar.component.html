@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-md navbar-light" style="background-color: lightpink;font-size: 14px">
+  <a id = "stag" class="navbar-brand" href="#">FireBlogs</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+
+      <a *ngIf="isLogged()" class="nav-item nav-link navbar-brand" style="margin-left: 325px" routerLink="/addPost">Add Post</a>
+      <a *ngIf="isLogged()" class="nav-item nav-link navbar-brand" style="margin-left: 325px" >My Post</a>
+      <a *ngIf="isNotLogged()" class="nav-item nav-link navbar-brand" style="margin-left: 325px" routerLink="/login">Login</a>
+      <a *ngIf="isLogged()" class="nav-item nav-link navbar-brand" (click)="logOut()">Logout</a>
+      <a class="nav-item nav-link navbar-brand" routerLink="/register">Register</a>
+
+    </div>
+  </div>
+</nav>

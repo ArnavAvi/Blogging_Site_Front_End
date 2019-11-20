@@ -1,0 +1,36 @@
+<div class="row pt-5 border">
+  <div class="col-md-6 mx-auto">
+    <div class="card-rounded-0">
+      <div class="class-header mx-5x` ">
+        <h3 class="mb-0 mx-2">Add Post</h3>
+      </div>
+      <div class="card-body">
+        <form class="form" autocomplete="off">
+          <div class="form-group">
+            <label>Title</label>
+            <input type="text" name="username" class="form-control rounded-8" [(ngModel)]="postdetail.title" required>
+          </div>
+          <div class="form-group">
+            <label>Content</label><br>
+<!--
+            <input type="text" name="content" id="cont" class="form-control rounded-8" [(ngModel)]="postDetails.content" required>
+-->
+            <textarea name="content" id="cont" placeholder="Keep it below 200" maxlength="200" [(ngModel)]="postdetail.content"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Security</label><br>
+            <!--<input type="text" name="name" class="form-control" [(ngModel)]="product.catagory"/>-->
+            <select name="security" placeholder="Security" [(ngModel)]="postdetail.security" required>
+              <option value="public">Public</option>
+              <option value="private">Private</option>
+              <option value="subscriber">Friends</option>
+            </select>
+          </div>
+          <button type="button" class="btn btn-primary float right" (click)="validateBeforeAdd()">Add Post</button>   <!--//.........-->
+          <button type="button" class="btn btn-primary float right mx-3" routerLink="/home">Cancel</button>
+        <button (click)="fun()">Check</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

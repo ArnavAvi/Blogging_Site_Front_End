@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-md navbar-light" style="background-color: lightpink;font-size: 14px">
+  <a id = "stag" class="navbar-brand" style=" font-size: 28px;
+  font-family: 'Bookman Old Style';" routerLink="/home">FireBlogs</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+
+      <a *ngIf="isLogged()" class="nav-item nav-link navbar-brand" style="margin-left: 325px" routerLink="/addPost">Add Post</a>
+      <a *ngIf="isNotLogged()" class="nav-item nav-link navbar-brand" style="margin-left: 325px" routerLink="/login">Login</a>
+      <a *ngIf="isLogged()" class="nav-item nav-link navbar-brand" routerLink="/follow">Follow</a>
+      <a *ngIf="isLogged()" class="nav-item nav-link navbar-brand" routerLink="/viewProfile">My Profile</a>
+      <a *ngIf="isLogged()" class="nav-item nav-link navbar-brand" (click)="logOut()">Logout</a>
+      <a class="nav-item nav-link navbar-brand" routerLink="/register">Register</a>
+
+    </div>
+  </div>
+</nav>
+
+<!--<app-navbar></app-navbar>--><br>
+<div class="col-lg-8 row  border" style="margin-left: 20%">
+  <div class="m-3" *ngFor="let s of posts" style="margin: 25px;background-color: pink">
+    <div *ngIf="fun(s.security, s.author)" style="margin-left: 12px;width:50%;">
+      <b><u>{{s.title}}</u></b><br>
+      <b>By: {{s.author}}</b><br>
+    {{s.content}}<br>
+      Created:&nbsp;{{s.createdOn | date}}<br> Visibility: {{s.security}}
+    <button style="margin-left: 20px" (click)="toEdit(s.author, s)">Edit</button>
+      <button style="margin-left: 20px" (click)="toDelete(s.author , s.postId)">Delete</button>
+</div>
+  </div>
+</div>

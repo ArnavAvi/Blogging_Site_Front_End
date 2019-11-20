@@ -1,0 +1,30 @@
+<div class="row pt-5 border">
+  <div class="col-md-6 mx-auto">
+    <div class="card-rounded-0">
+      <div class="class-header mx-5x` ">
+        <h3 class="mb-0 mx-2">Register</h3>
+      </div>
+      <div class="card-body">
+        <form class="form" autocomplete="off">
+          <div class="form-group">
+            <label>Username</label>
+            <input type="text" name="username" class="form-control rounded-8" [(ngModel)]="userDetails.userName" required>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" class="form-control rounded-8" [(ngModel)]="userDetails.email" required>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" name="password" class="form-control rounded-8" [(ngModel)]="userDetails.password" required>
+          </div>
+          <button type="button" class="btn btn-primary float right" (click)="validation()">Register</button>
+          <button type="button" class="btn btn-primary float right mx-3" routerLink="/home">Cancel</button>
+<!--
+          <button type="button" (click)="validation()">Check</button>
+-->
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
